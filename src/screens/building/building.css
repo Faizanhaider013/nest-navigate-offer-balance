@@ -1,0 +1,481 @@
+/* Building controls use the same tokens as the rest of the learning journey. */
+.game-breadcrumb {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-bottom: 24px;
+}
+.game-breadcrumb span {
+  margin: 0 10px;
+  color: #8994af;
+}
+.ob-round {
+  position: relative;
+  margin-bottom: 22px;
+}
+.ob-round-progress {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.ob-round-progress .ob-eyebrow {
+  margin: 0;
+}
+.ob-progress-dots {
+  display: flex;
+  gap: 6px;
+}
+.ob-progress-dots span {
+  width: 8px;
+  height: 8px;
+  border: 1px solid #7b8bd3;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+.ob-progress-dots .is-filled {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.ob-round-home {
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+  margin: 0;
+}
+.ob-brief {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: center;
+  padding: 12px 26px 12px 12px;
+  background: #eff2ff;
+  border: 1px solid #dde3fb;
+  border-radius: var(--radius-card);
+  margin-bottom: 28px;
+}
+.ob-brief .home-scene {
+  grid-column: 1;
+  grid-row: 1;
+}
+.ob-brief-note {
+  grid-column: 2;
+  grid-row: 1;
+}
+.ob-brief-note-label {
+  font-size: 0.75rem;
+  color: var(--color-primary);
+  font-weight: 650;
+  margin-bottom: 8px;
+  letter-spacing: 0;
+}
+.ob-brief-note-text {
+  font-size: 0.9375rem;
+  margin: 0;
+  line-height: 1.7;
+}
+.ob-brief-row {
+  grid-column: 3;
+  grid-row: 1;
+  border-left: 1px solid #d2d9f2;
+  padding-left: 24px;
+}
+.ob-brief-key {
+  display: block;
+  font-size: 0.6875rem;
+  color: var(--color-text-muted);
+}
+.ob-brief-val {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 750;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+.ob-build {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 28px;
+  align-items: start;
+}
+.ob-build-controls {
+  display: grid;
+  gap: 18px;
+  min-width: 0;
+}
+.ob-section-heading h2 {
+  font-size: 1.125rem;
+  margin-bottom: 6px;
+}
+.ob-section-heading p {
+  font-size: 0.8125rem;
+  margin: 0;
+  color: var(--color-text-muted);
+}
+.ob-builder {
+  padding: 26px;
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  display: grid;
+  gap: 24px;
+  box-shadow: var(--shadow-soft);
+}
+.ob-choice,
+.ob-price {
+  min-width: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.ob-choice {
+  border-top: 1px solid var(--color-border);
+  padding-top: 16px;
+}
+.ob-choice-legend {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  padding-right: 12px;
+  letter-spacing: -0.025em;
+}
+.ob-choice-help {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin: 5px 0 12px;
+}
+.ob-choice-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.ob-choice-options:has(input[name="financing"]) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.ob-option {
+  position: relative;
+  padding: 13px 11px 13px 33px;
+  min-height: 60px;
+  border: 1px solid #bbc5dc;
+  border-radius: var(--radius-control);
+  cursor: pointer;
+  transition:
+    border-color 0.15s,
+    background 0.15s,
+    transform 0.15s,
+    box-shadow 0.15s;
+}
+.ob-option:hover {
+  background: #f7f8ff;
+  border-color: #7b8ddb;
+  transform: translateY(-1px);
+}
+.ob-option.is-selected {
+  border-color: var(--color-primary);
+  box-shadow: inset 0 0 0 1px var(--color-primary);
+  background: #f0f3ff;
+}
+.ob-option:active {
+  transform: translateY(0);
+}
+.ob-option:has(:focus-visible) {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+.ob-option-input {
+  position: absolute;
+  left: 11px;
+  top: 16px;
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  accent-color: var(--color-primary);
+}
+.ob-option-input:focus-visible {
+  outline: none;
+}
+.ob-option-label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 650;
+  line-height: 1.5;
+}
+.ob-option-hint {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-top: 5px;
+}
+.ob-price-readout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 16px 0 10px;
+}
+.ob-price-dollars {
+  font-size: 2rem;
+  font-weight: 750;
+  letter-spacing: -0.055em;
+  font-variant-numeric: tabular-nums;
+}
+.ob-price-pct {
+  color: var(--color-primary);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  background: var(--color-surface-soft);
+  padding: 5px 9px;
+  border-radius: 8px;
+}
+.ob-range {
+  appearance: none;
+  width: 100%;
+  height: 44px;
+  margin: 0;
+  display: block;
+  background: transparent;
+  cursor: pointer;
+}
+.ob-range::-webkit-slider-runnable-track {
+  height: 7px;
+  border-radius: 99px;
+  background: linear-gradient(
+    to right,
+    var(--color-primary) var(--range-progress),
+    #e0e5f4 var(--range-progress)
+  );
+}
+.ob-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  margin-top: -8.5px;
+  background: white;
+  border: 6px solid var(--color-primary);
+  border-radius: 50%;
+  box-shadow: 0 2px 5px #435ce529;
+}
+.ob-range::-moz-range-track {
+  height: 7px;
+  border-radius: 99px;
+  background: #e0e5f4;
+}
+.ob-range::-moz-range-progress {
+  height: 7px;
+  border-radius: 99px;
+  background: var(--color-primary);
+}
+.ob-range::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  background: white;
+  border: 5px solid var(--color-primary);
+  border-radius: 50%;
+}
+.ob-range:focus-visible {
+  border-radius: 8px;
+}
+.ob-range-endpoints {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.6875rem;
+  color: var(--color-text-muted);
+}
+.ob-build-feedback {
+  position: sticky;
+  top: 24px;
+  display: grid;
+  gap: 22px;
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 24px;
+  box-shadow: var(--shadow-soft);
+  scroll-margin-top: 90px;
+}
+.ob-build-feedback .ob-feedback-heading > .ob-eyebrow {
+  display: block;
+}
+.ob-submit-area {
+  border-top: 1px solid var(--color-border);
+  padding-top: 18px;
+}
+.ob-submit-area p {
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  margin-bottom: 12px;
+}
+.ob-submit-area .ob-btn {
+  width: 100%;
+  justify-content: space-between;
+  padding-inline: 20px;
+  font-size: 0.8125rem;
+}
+.ob-review-link {
+  display: none;
+}
+@media (max-width: 1000px) {
+  .ob-build {
+    grid-template-columns: minmax(0, 1fr) 290px;
+    gap: 20px;
+  }
+  .ob-builder {
+    padding: 22px;
+  }
+  .ob-build-feedback {
+    padding: 20px;
+  }
+  .ob-choice-options,
+  .ob-choice-options:has(input[name="financing"]) {
+    grid-template-columns: 1fr;
+  }
+  .ob-option {
+    padding: 11px 13px 11px 35px;
+  }
+  .ob-option-label {
+    font-size: 0.8125rem;
+  }
+  .ob-option-hint {
+    font-size: 0.75rem;
+    margin-top: 3px;
+  }
+  .ob-brief {
+    grid-template-columns: 105px minmax(0, 1fr) auto;
+    gap: 18px;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 700px) {
+  .game-breadcrumb {
+    font-size: 0.6875rem;
+    margin-bottom: 18px;
+  }
+  .ob-round {
+    margin-bottom: 18px;
+  }
+  .ob-round .ob-title {
+    font-size: 2rem;
+  }
+  .ob-brief {
+    grid-template-columns: 95px minmax(0, 1fr);
+    padding: 14px 18px;
+    gap: 8px 16px;
+    margin-bottom: 22px;
+  }
+  .ob-brief-row {
+    grid-column: 2;
+    border: 0;
+    padding: 0;
+    text-align: right;
+  }
+  .ob-brief-note {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+  .ob-brief-note-text {
+    font-size: 0.875rem;
+  }
+  .ob-build {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+  .ob-build-controls {
+    gap: 14px;
+  }
+  .ob-builder {
+    padding: 20px 16px;
+    gap: 22px;
+  }
+  .ob-choice-help {
+    font-size: 0.75rem;
+  }
+  .ob-option-label {
+    font-size: 0.8125rem;
+  }
+  .ob-option-hint {
+    font-size: 0.75rem;
+  }
+  .ob-option {
+    padding: 11px 12px 11px 34px;
+  }
+  .ob-price-dollars {
+    font-size: 1.75rem;
+  }
+  .ob-review-link {
+    position: sticky;
+    top: 8px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    min-height: 48px;
+    padding: 10px 12px;
+    background: #eef2ff;
+    border: 1px solid #c7d1f4;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 0.6875rem;
+    color: #354795;
+    box-shadow: 0 3px 12px #263d7110;
+  }
+  .mobile-scores {
+    font-size: 0.625rem;
+    white-space: nowrap;
+  }
+  .mobile-scores strong {
+    font-size: 0.8125rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .mobile-scores > span {
+    margin: 0 4px;
+    color: #8b98be;
+  }
+  .ob-build-feedback {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    padding: 20px 18px;
+  }
+  .ob-build-feedback > .ob-feedback-heading,
+  .ob-build-feedback > .ob-balance-note,
+  .ob-submit-area {
+    grid-column: 1 / -1;
+  }
+  .ob-build-feedback .ob-meter {
+    align-content: start;
+  }
+  .ob-build-feedback .ob-meter + .ob-meter {
+    border: 0;
+    padding: 0;
+  }
+  .ob-build-feedback .ob-meter-head {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 56px;
+  }
+  .ob-build-feedback .ob-feedback-heading p {
+    font-size: 0.75rem;
+  }
+  .ob-submit-area .ob-btn {
+    font-size: 0.875rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ob-option,
+  .ob-progress-dots span {
+    transition: none;
+  }
+}
+@media (forced-colors: active) {
+  .ob-option.is-selected {
+    outline: 2px solid Highlight;
+  }
+  .ob-range {
+    appearance: auto;
+  }
+  .ob-range::-webkit-slider-thumb {
+    appearance: auto;
+  }
+}
